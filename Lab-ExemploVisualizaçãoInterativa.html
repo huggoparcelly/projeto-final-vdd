@@ -96,27 +96,17 @@
 
   <script type="text/javascript">
 
-    // var ROOT_PATH = 'https://echarts.apache.org/examples';
     var dom = document.getElementById('container');
     var myChart = echarts.init(dom, null, {
       renderer: 'canvas',
       useDirtyRect: false
     });
     var app = {};
+    var ROOT_PATH = 'https://echarts.apache.org/examples';
     var option;
 
     myChart.showLoading();
-
-
-    $.ajax({
-    url: 'https://echarts.apache.org/examples/data/asset/geo/world.json',
-    type: 'GET',
-    dataType: 'json',
-    headers: {
-        'Access-Control-Allow-Origin': 'https://echarts.apache.org'
-    },
-    
-    success: function (usaJson) {
+$.get(ROOT_PATH + '/data/asset/geo/world.json', function (usaJson) {
       
       myChart.hideLoading();
       echarts.registerMap('USA', usaJson, {
@@ -6540,12 +6530,8 @@
 
         }]
       });
-    },
-
-    error: function(xhr, status, error) {
-        console.error(status, error);
-      }
-  });
+    }
+  );
 
     window.addEventListener('resize', myChart.resize);
   </script>

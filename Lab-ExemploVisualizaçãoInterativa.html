@@ -2,7 +2,7 @@
 	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=sankey-energy
 -->
 <!DOCTYPE html>
-<html lang="en" style="height: 100%">
+<html lang="pt-br" style="height: 100%">
 
 <head>
   <meta charset="utf-8">
@@ -55,16 +55,32 @@
         taxas
         de mortalidade ao longo dos anos, entre 1990 e 2019, geramos a seguinte visualização. Onde, através dela,
         é possível obter vários insights. Como por exemplo, os que decidimos trazer.
-        <br>
-        - A primeira história destacada trata da diminuição da taxa de mortalidade ao longo do tempo no mundo todo,
-        principalmente a partir dos anos 2000.
-        <br>
-        - E a segunda história tem como objetivo enfatizar que, de maneira geral, os países com maior e menor mortalidade
-        são os mesmos ao longo dos anos.
+        <dl style="margin: 0px 50px">
+          <dt>
+            - A primeira história destacada trata da diminuição da taxa de mortalidade ao longo do tempo no mundo todo, principalmente a partir dos anos 2000.
+          </dt>
+          
+          <dt>
+            - A segunda história tem como objetivo enfatizar que, de maneira geral, os países com maior e menor mortalidade são os mesmos ao longo dos anos.
+          </dt>
+
+          <dt>
+            - Na terceira história, destacamos motivos possíveis para a taxa de mortalidade na África ter sido tão alta na década de 90 e o que está sendo feito para a sua diminuição.
+            <dd>
+              * Saúde publica: epidemia de HIV/AIDS, doenças infecciosas como a malária, tuberculose e diarréia junto à falta de saneamento básico adequado, e a desnutrição.
+            </dd>
+            <dd>
+              * Fatores socioeconômicos: além da alta pobreza, houveram fortes conflitos em vários países africanos (Guerra civil de Ruanda, de 1990 até 1994, Primeira guerra civil do Congo, de 1996 até 2003, Guerra civil de Angola, de 1975 até 2002, Guerra civil de Serra Leoa, de 1991 até 2002, entre outros).
+            </dd>
+            <dd>
+              * Motivos para a diminuição: O avanço tecnológico contribuiu bastante para o tratamento e combate das doenças, houveram algumas melhorias na questão da nutrição, além de, com o fim das guerras civis, maior estabilidade política e crescimento econômico. Ações humanitárias internacionais também foram fortes contribuintes.
+            </dd>
+          </dt>
+        </dl>
 
       </p>
   </div>
-  <div id="container" style="max-width: 100%; height: 470px; padding: 10px 50px 10px 50px;"></div>
+  <div id="container" style="max-width: 100%; height: 470px; margin: 10px 50px 10px 50px;"></div>
   <div id="footer" style="height: 2%">
     <p style="text-align:justify; padding: 20px 50px 0px 50px;"><b>Dicas para interagir com a visualização</b>:</p>
     <ul style="padding: 0px 50px 10px 75px;">
@@ -77,6 +93,18 @@
       <li>Outra opção de filtro é selecionar a faixa de valores para a taxa de mortalidade e com isso, só serão exibidos
         os países na faixa escolhida</li>
     </ul>
+
+    <p style="text-align:justify; padding: 0px 50px 0px 50px;"><b>Fontes utilizadas</b>:</p>
+    <ul style="padding: 0px 50px 30px 75px;">
+      <li><a href="https://data.unicef.org/topic/child-survival/under-five-mortality/" target="_blank">
+        https://data.unicef.org/topic/child-survival/under-five-mortality/
+      </a></li>
+      <li><a href="https://www.who.int/data/data-collection-tools/who-mortality-database" target="_blank">
+        https://www.who.int/data/data-collection-tools/who-mortality-database
+      </a></li>
+      <li><a href="https://www.unicef.org/reports/state-worlds-children-2021" target="_blank">
+        https://www.unicef.org/reports/state-worlds-children-2021
+      </a></li>
   </div>
 
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
@@ -174,7 +202,7 @@
             '#a50026'
           ]
         },
-        text: ['High', 'Low'],
+        text: ['Alta', 'Baixa'],
         calculable: true
       },
       toolbox: {
@@ -195,7 +223,11 @@
           map: 'USA',
           emphasis: {
             label: {
-              show: true
+              show: true,
+              color: '#000'
+            },
+            itemStyle: {
+              areaColor: '#82d11b'
             }
           },
         }
